@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistema IoT de Control de Acceso Inteligente para Gimnasio
 
 ## Descripción
@@ -100,3 +101,6 @@ En Wokwi:
 ## Autor
 
 Proyecto académico - IoT
+=======
+# iot-gym-access-control
+>>>>>>> 8a9041d5d286a69c92585d058886daba8fe1bc28

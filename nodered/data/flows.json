@@ -1,0 +1,493 @@
+[
+    {
+        "id": "adfd65a931624bb8",
+        "type": "tab",
+        "label": "Flujo 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "2a680f02c7286cf5",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "dc48b3c6c3ba75d0",
+        "type": "ui_tab",
+        "name": "Dashboard Gimnasio",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "502970ea6f01a615",
+        "type": "ui_group",
+        "name": "Monitoreo",
+        "tab": "dc48b3c6c3ba75d0",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "49f20cc009a4efe4",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "970bda71575a01f8",
+        "type": "mqtt in",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "topic": "gym/dashboard/nombre",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2a680f02c7286cf5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "0aaaf0b0e81c1965",
+                "7a144d2fd0364fa7"
+            ]
+        ]
+    },
+    {
+        "id": "8d44c8e9f87987b6",
+        "type": "mqtt out",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "topic": "gym/puerta/comando",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2a680f02c7286cf5",
+        "x": 1000,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "9abaa40f188ce101",
+        "type": "mqtt in",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "topic": "gym/dashboard/logs",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2a680f02c7286cf5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 450,
+        "y": 440,
+        "wires": [
+            [
+                "9a6c1cb2eacdc113"
+            ]
+        ]
+    },
+    {
+        "id": "40b127cc21739ce6",
+        "type": "mqtt in",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "topic": "gym/puerta/estado",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "2a680f02c7286cf5",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 500,
+        "wires": [
+            [
+                "bf0b13cbe5463b1e"
+            ]
+        ]
+    },
+    {
+        "id": "bf0b13cbe5463b1e",
+        "type": "trigger",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "op1": "ONLINE",
+        "op2": "OFFLINE",
+        "op1type": "str",
+        "op2type": "str",
+        "duration": "5",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 340,
+        "y": 500,
+        "wires": [
+            [
+                "be22ef6ac8ade40a"
+            ]
+        ]
+    },
+    {
+        "id": "bde3d2995da233f9",
+        "type": "inject",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 630,
+        "y": 380,
+        "wires": [
+            [
+                "a9cac5631088964f"
+            ]
+        ]
+    },
+    {
+        "id": "a9cac5631088964f",
+        "type": "mqtt out",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "topic": "gym/dashboard/nombre",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2a680f02c7286cf5",
+        "x": 890,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ec3e5d66cc15c0d9",
+        "type": "inject",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "str",
+        "x": 250,
+        "y": 580,
+        "wires": [
+            [
+                "a0d29b84098cf662"
+            ]
+        ]
+    },
+    {
+        "id": "a0d29b84098cf662",
+        "type": "mqtt out",
+        "z": "adfd65a931624bb8",
+        "name": "gym/dashboard/logs",
+        "topic": "",
+        "qos": "",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "2a680f02c7286cf5",
+        "x": 480,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "39efcfaa1fd58c58",
+        "type": "ui_button",
+        "z": "adfd65a931624bb8",
+        "name": "",
+        "group": "502970ea6f01a615",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "🔓 Abrir Puerta",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "OPEN",
+        "payloadType": "str",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 720,
+        "y": 500,
+        "wires": [
+            [
+                "8d44c8e9f87987b6",
+                "9a6c1cb2eacdc113"
+            ]
+        ]
+    },
+    {
+        "id": "0aaaf0b0e81c1965",
+        "type": "ui_text",
+        "z": "adfd65a931624bb8",
+        "group": "502970ea6f01a615",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Último Socio Detectado:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 410,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "7a144d2fd0364fa7",
+        "type": "ui_text",
+        "z": "adfd65a931624bb8",
+        "group": "502970ea6f01a615",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Estado de Seguridad:",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 400,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "faf4fcdc85c35da0",
+        "type": "ui_text",
+        "z": "adfd65a931624bb8",
+        "group": "502970ea6f01a615",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Abrir en caso de que el socio esté en el sistema pero haya olvidado su tarjeta.",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 320,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "9a6c1cb2eacdc113",
+        "type": "ui_template",
+        "z": "adfd65a931624bb8",
+        "group": "502970ea6f01a615",
+        "name": "Registro de Actividad del Sistema",
+        "order": 2,
+        "width": "12",
+        "height": "7",
+        "format": "<div\n    style=\"background-color: #1e1e1e; color: #d4d4d4; font-family: 'Consolas', monospace; padding: 15px; border-radius: 8px; height: 350px; overflow-y: auto; border: 2px solid #333; position: relative; box-shadow: inset 0 0 10px #000;\">\n\n    <button ng-click=\"clearLogs()\" style=\"position: absolute; top: 10px; right: 10px; background: #444; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer; font-size: 11px; z-index: 10;\">\n        🗑️ Limpiar Historial\n    </button>\n\n    <div\n        style=\"color: #6a9955; border-bottom: 1px solid #333; margin-bottom: 10px; padding-bottom: 5px; font-weight: bold;\">\n        > SISTEMA DE AUDITORÍA EN VIVO\n    </div>\n\n    <div id=\"log-list\"></div>\n</div>\n\n<script>\n    (function(scope) {\n        // RESET TOTAL AL RECARGAR: Mata los mensajes fantasmas del navegador\n        window.logHistory = []; \n\n        scope.clearLogs = function() {\n            window.logHistory = [];\n            var list = document.getElementById('log-list');\n            if(list) list.innerHTML = \"\";\n        };\n\n        scope.$watch('msg', function(msg) {\n            if (msg && msg.payload) {\n                var payload = msg.payload;\n\n                // 1. FILTRO DE SISTEMA (No mostrar latidos en el log de texto)\n                if (payload === \"ONLINE\" || payload === \"OFFLINE\") return;\n\n                // 2. DETECTAR APERTURA MANUAL (BOTÓN)\n                if (payload === \"OPEN\") {\n                    payload = \"🛠️ APERTURA MANUAL: Acceso concedido por el Administrador\";\n                }\n\n                // 3. EVITAR DUPLICADOS (Si el mensaje es igual al último al recargar, lo ignora)\n                if (window.logHistory.length > 0 && window.logHistory[0] === payload) {\n                    return;\n                }\n\n                // Añadir al inicio y mantener máximo 5\n                window.logHistory.unshift(payload);\n                if (window.logHistory.length > 5) window.logHistory.pop();\n\n                var listHtml = \"\";\n                window.logHistory.forEach(function(log) {\n                    var color = \"#d4d4d4\"; \n                    if (log.includes(\"CONCEDIDO\")) color = \"#4EC9B0\"; // Verde\n                    if (log.includes(\"DENEGADO\") || log.includes(\"ALERTA\")) color = \"#F44336\"; // Rojo\n                    if (log.includes(\"MANUAL\")) color = \"#007acc\"; // Azul para el administrador\n                    if (log.includes(\"Deudor\")) color = \"#FFC107\"; // Amarillo\n\n                    listHtml += `<p style=\"margin: 8px 0; border-left: 4px solid ${color}; padding-left: 10px; font-size: 13px; animation: slideIn 0.3s ease-out;\">\n                                    <span style=\"color: #858585;\">[${new Date().toLocaleTimeString()}]</span> ${log}\n                                 </p>`;\n                });\n\n                var logElement = document.getElementById('log-list');\n                if(logElement) logElement.innerHTML = listHtml;\n            }\n        });\n    })(scope);\n</script>\n\n<style>\n    @keyframes slideIn {\n        from {\n            opacity: 0;\n            transform: translateX(-10px);\n        }\n\n        to {\n            opacity: 1;\n            transform: translateX(0);\n        }\n    }\n</style>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 880,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "be22ef6ac8ade40a",
+        "type": "ui_template",
+        "z": "adfd65a931624bb8",
+        "group": "502970ea6f01a615",
+        "name": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "format": "",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 500,
+        "y": 500,
+        "wires": [
+            [
+                "39efcfaa1fd58c58"
+            ]
+        ]
+    }
+]
